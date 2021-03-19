@@ -1,0 +1,53 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "nodeJS-TypeScript-API",
+    "description": "This application is REST API created using TypeScript & NodeJS runtime."
+  },
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "user",
+      "description": ""
+    },
+    {
+      "name": "health-check",
+      "description": "Gives status of API server"
+    }
+  ],
+  "paths": {
+    "/health-check": {
+      "get": {
+        "tags": ["health-check"],
+        "summary": "",
+        "description": "",
+        "operationId": "userValidation",
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema":{
+                "$ref":"#/definitions/HealthResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "UserValidation": {
+      "type": "object",
+      "properties": {
+        "IsValid": {
+          "type": "boolean"
+        },
+        "ErrMessage": {
+          "type": "string"
+        }
+      }
+    },
+    "HealthResponse":{
+        "type": "string"
+    }
+  }
+}
