@@ -1,9 +1,11 @@
+import { PASSWORD, USERNAME } from "../constants/user.constants";
+import { IUserCredentials } from "../models/IUserCredentials";
 import { IUserValidation } from "../models/IUserValidation";
-import { UserCredentials } from "../models/UserCredentials";
+
 export class UserBusinessLogic {
-  userValidation(user: UserCredentials) {
+  userValidation(user: IUserCredentials): IUserValidation {
     let valObj: IUserValidation;
-    if (user.username === "asdf@gmail.com" && user.password === "123") {
+    if (user.username === USERNAME && user.password === PASSWORD) {
       valObj = {
         IsValid: true,
         ErrMessage: '',

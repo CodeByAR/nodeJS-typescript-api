@@ -4,7 +4,7 @@ import userRouter from './user/user.routes';
 
 const routes = Router();
 
-routes.use('/users', userRouter);
+routes.use('/user', userRouter);
 routes.use('/health-check', healthCheckRouter);
 
 export default routes;
