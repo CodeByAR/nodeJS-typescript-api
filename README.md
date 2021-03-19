@@ -2,7 +2,7 @@
 This application is REST API created using TypeScript & NodeJS runtime.
 
 ## Application URL
-https://nodejs-ts-api.herokuapp.com/api/health-check
+https://nodejs-ts-api.herokuapp.com/swagger
 
 ## How to Run?
 Run below commands in command prompt after cloning/downloading the code
