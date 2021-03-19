@@ -4,7 +4,9 @@
   "description": "REST API using Node, Express and TypeScript",
   "main": "dist/app.js",
   "scripts": {
-    "start": "tsc & node dist/app.js",
+    "start": "node dist/app.js",
+    "build":"tsc",
+    "start-local":"tsc & node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
