@@ -8,26 +8,49 @@
   "basePath": "/api",
   "tags": [
     {
-      "name": "user",
-      "description": ""
+      "name": "User",
+      "description": "User data related functionalities"
     },
     {
-      "name": "health-check",
+      "name": "Health Check",
       "description": "Gives status of API server"
     }
   ],
   "paths": {
     "/health-check": {
       "get": {
-        "tags": ["health-check"],
+        "tags": ["Health Check"],
         "summary": "",
         "description": "",
-        "operationId": "userValidation",
         "responses": {
           "200": {
             "description": "Ok",
-            "schema":{
-                "$ref":"#/definitions/HealthResponse"
+            "schema": {
+              "$ref": "#/definitions/HealthResponse"
+            }
+          }
+        }
+      }
+    },
+    "/user/validation": {
+      "post": {
+        "tags": ["User"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "User credentials to be validated",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UserCredentials"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "schema": {
+              "$ref": "#/definitions/UserValidation"
             }
           }
         }
@@ -46,8 +69,19 @@
         }
       }
     },
-    "HealthResponse":{
-        "type": "string"
+    "UserCredentials": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "HealthResponse": {
+      "type": "string"
     }
   }
 }
